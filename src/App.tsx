@@ -10,9 +10,12 @@ interface Data {
 }
 
 function App() {
+  //
   const [data, setData] = useState<Data>()
   const fetchData = async () => {
-    const result = (await axios('https://yesno.wtf/api')) as any
+    const result = (await axios(
+      'http://shibe.online/api/shibes?count=5&urls=true&httpsUrls=true'
+    )) as any
     setData(result.data)
   }
 
